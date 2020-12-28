@@ -68,35 +68,19 @@ app.get('/lotto', (req, res) => {
 
   let response;
 
-  //   switch (right) {
-  //     case right < 4:
-  //       response = 'Sorry, you lose';
-  //       break;
-  //     case right === 4:
-  //       response = 'Congratulations, you win a free ticket';
-  //       break;
-  //     case right === 5:
-  //       response = 'Congratulations! You win $100!';
-  //       break;
-  //     case right === 6:
-  //       response = 'Wow! Unbelievable! You could have won the mega millions!';
-  //       break;
-  //     default:
-  //       response = 'oops something went wrong';
-  //   }
-
-  if (right < 4) {
-    response = 'Sorry, you lose';
-  } else if (right === 4) {
-    response = 'Congratulations, you win a free ticket';
-  } else if (right === 5) {
-    response = 'Congratulations! You win $100!';
-  } else {
-    response = 'Wow! Unbelievable! You could have won the mega millions!';
+  switch (right) {
+    case 4:
+      response = 'Congratulations, you win a free ticket';
+      break;
+    case 5:
+      response = 'Congratulations! You win $100!';
+      break;
+    case 6:
+      response = 'Wow! Unbelievable! You could have won the mega millions!';
+      break;
+    default:
+      response = 'Sorry, you lose';
   }
-
-  console.log(right);
-  console.log(response);
 
   res.status(200).send(response);
 });
